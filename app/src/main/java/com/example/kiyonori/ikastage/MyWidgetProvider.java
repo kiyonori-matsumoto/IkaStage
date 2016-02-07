@@ -1,36 +1,25 @@
 package com.example.kiyonori.ikastage;
 
 import android.app.AlarmManager;
-import android.app.LoaderManager;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.Loader;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Typeface;
-import android.os.Bundle;
-import android.transition.Visibility;
 import android.util.Log;
-import android.view.View;
 import android.widget.RemoteViews;
-import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -49,7 +38,7 @@ public class MyWidgetProvider extends AppWidgetProvider {
         final String urlText2 = "http://splapi.retrorocket.biz/gachi/now";
         final String urlText3 = "http://splapi.retrorocket.biz/regular/next";
         final String urlText4 = "http://splapi.retrorocket.biz/gachi/next";
-        remoteViews = new RemoteViews(context.getPackageName(), R.layout.activity_main);
+        remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_large);
         this.context = context;
         final String [] loading = {"ローディング", "ローディング"};
         remoteViews.setImageViewBitmap(R.id.imageView, buildUpdate(context, Color.rgb(192, 217, 0), loading, "ローディング", "イマ"));
@@ -164,7 +153,7 @@ public class MyWidgetProvider extends AppWidgetProvider {
 //    @Override
 //    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 //        final String urlText = "http://splapi.retrorocket.biz/regular/now";
-//        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.activity_main);
+//        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_large);
 //
 //        HttpURLConnection http = null;
 //        InputStream in;
